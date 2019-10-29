@@ -1,0 +1,11 @@
+overblog_graphql:
+    definitions:
+        show_debug_info: true
+        schema:
+            query: RootQuery
+
+        mappings:
+            types:
+                -   type: annotation
+                    dir: "%kernel.project_dir%/src/GraphQL"
+                    suffix: null

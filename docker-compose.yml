@@ -1,0 +1,46 @@
+version: '3.3'
+services:
+  apache:
+    build: .docker/apache
+    container_name: esli_local_apache
+    ports:
+      - "80:80"
+    volumes:
+      - .docker/config/vhosts:/etc/apache2/sites-enabled
+      - .:/home/wwwroot/eslistavenga.local
+    depends_on:
+      - php
+
+  php:
+    build: .docker/php
+    container_name: esli_local_php
+    volumes:
+      - .:/home/wwwroot/eslistavenga.local
+    depends_on:
+      - mysql
+    links:
+      - mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: sf4_phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 33066
+    ports:
+      - "8080:80"
+    links:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    container_name: eslistavenga_mysql
+    volumes:
+      - /.docker/databases/data/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: eslistavenga
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "33066:3306"

@@ -1,0 +1,13 @@
+#User:
+#  type: object
+#  config:
+#    description: A user
+#    fields:
+#      name:
+#        type: String!
+#      email:
+#        type: String!
+#      username:
+#        type: String!
+#      active_since:
+#        type: String #make this a DateTime

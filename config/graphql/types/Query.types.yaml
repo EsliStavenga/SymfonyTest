@@ -1,0 +1,8 @@
+#RootQuery:
+#  type: object
+#  config:
+#    description: "Apartments ORM repository"
+#    fields:
+#      loggedInUser:
+#        type: User
+#        resolve: '@=resolver("App\\GraphQL\\Resolver\\UserResolver", [info, value, args])'
