@@ -12,9 +12,8 @@ use Overblog\GraphQLBundle\Definition\Argument;
 
 /**
  * Class RootQuery
- * @package App\RootQuery
+ * @package App\GraphQL\Query\RootQuery
  * @GQL\Type
- * @GQL\Provider()
  */
 class RootQuery
 {

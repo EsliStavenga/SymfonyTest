@@ -23,6 +23,10 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+    App\Entity\:
+        resource: '../src/Entity'
+        public: true
+
     App\GraphQL\Query\:
         resource: '../src/GraphQL/Query'
         public: true

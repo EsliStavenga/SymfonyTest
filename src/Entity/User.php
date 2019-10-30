@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\Table(name="user")
- * @GQL\Type()
+ * @GQL\Type(name="User")
  */
 class User implements UserInterface
 {

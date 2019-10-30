@@ -18,16 +18,12 @@ use Overblog\GraphQLBundle\Definition\Resolver\ResolverInterface;
 class UserResolver implements ResolverInterface
 {
 
-    public function loggedInUser() {
-        $user = new User();
-        $user->email = "asd";
-        $user->firstname = "Test";
-        $user->lastname = "Test1q23123123";
-
-        return $user;
-    }
-
-    public function fullname(User $user) {
+    /**
+     * @param User $user
+     * @return string
+     */
+    public function fullname($args) {
+        var_dump($args);
         return "test";
     }
 

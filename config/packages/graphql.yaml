@@ -6,6 +6,10 @@ overblog_graphql:
 
         mappings:
             types:
-                -   type: annotation
-                    dir: "%kernel.project_dir%/src/GraphQL"
-                    suffix: null
+                - type: annotation
+                  dir: "%kernel.project_dir%/src/GraphQL"
+                  suffix: ~
+
+                - type: annotation
+                  dir: "%kernel.project_dir%/src/Entity"
+                  suffix: ~
